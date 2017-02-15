@@ -1,0 +1,114 @@
+html {
+	overflow-x:  hidden;
+}
+body {
+	background-color: #f5f5f5;
+}
+.main-container {
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
+.reviews__item {
+	padding: 30px 0;
+}
+
+.reviews__item {
+	background-color: white;
+	border: 2px solid #BDBDBD;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 30px;
+}
+
+.reviews__item p {
+	margin-top: 15px;
+}
+
+.preview.off {
+	display: none;
+}
+
+#previmage img{
+	width: 320px;
+	height: 240px;
+}
+
+.main-nav {
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.51);
+	margin-bottom: 30px;
+}
+
+.main-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.main-nav ul li {
+	display: inline-block;
+}
+
+.main-nav ul li a {
+	display: inline-block;
+	padding: 15px 30px;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.auth {
+	background-color: white;
+	padding:  30px;
+	text-align: right;
+}
+
+.field {
+	display: block;
+	height: 25px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.send-btn {
+	display: inline-block;
+}
+.error {
+	position: relative;
+	right: 24px;
+	color: red;
+}
+
+.edit-link {
+	text-align: right;
+}
+
+.edit-link a {
+	display: inline-block;
+}
+
+.edit-admin {
+	color: #BDBDBD;
+	font-style: italic;
+}
+
+.reviews__item {
+	position: relative;
+}
+.reviews__item .status {
+	position: absolute;
+	display: inline-block;
+	right: 30px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.reviews__item .status-0 {
+	color: red;
+}
+
+.reviews__item .status-1 {
+	color: green;
+}

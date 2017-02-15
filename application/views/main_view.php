@@ -11,7 +11,7 @@
 
 <div class="reviews">
 	<?php foreach ($data as $value): ?>
-		<?php if (!$value->check) continue; ?>
+		<?php if (!$value->checked) continue; ?>
 		<article class="reviews__item">
 			<strong><?php echo $value->name ?></strong>
 			<em>

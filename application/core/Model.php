@@ -1,8 +1,12 @@
 <?php
 
 class Model {
+	private $db = '';
+	public function __construct () {
+		$this->db = new DB;
+	}
 	protected static function dateNow() {
-		return date("o") . '-' .  date("m") . '-' . date("d");
+		return date("o-m-d");
 	}
 
 	public static function getAll($table) {
@@ -13,21 +17,21 @@ class Model {
 
 	public static function getOne($id, $table) {
 		$sql = "SELECT `id`, `name`, `email`, `text`, `date`, `edit`, `img` 
-						FROM `$table` WHERE id=$id";
+						FROM `$table` WHERE id=?";
 		$db  = new DB;
-		return $db->query($sql);
+		return $db->query($sql, [$id]);
 	}
 
 	public static function deleteOne($id, $table) {
-		$sql = "DELETE FROM `$table` WHERE id=$id";
+		$sql = "DELETE FROM `$table` WHERE id=?";
 		$db  = new DB;
-		return $db->execute($sql);
+		return $db->execute($sql, [$id]);
 	}
 
 	public static function update($id, $table, $name, $email, $text, $date,  $img) {
-		$sql = "UPDATE `$table` SET `name`='$name',`email`='$email',`text`='$text',`date`='$date',`edit`='1', `img`='$img' WHERE id=" . $id;
+		$sql = "UPDATE `$table` SET `name`=?,`email`=?,`text`=?,`date`=?,`edit`='1', `img`=? WHERE id=?";
 		$db  = new DB;
-		return $db->execute($sql);
+		return $db->execute($sql, [$name, $email, $text, $date, $img, $id]);
 	}
 
 	public static function saveImage() {

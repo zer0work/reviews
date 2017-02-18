@@ -15,16 +15,16 @@ class Model_Reviews extends Model {
 	}
 	
 	public static function moderReview($id, $value) {
-		$sql = "UPDATE `reviews` SET `check`='$value' WHERE id=" . $id;
+		$sql = "UPDATE `reviews` SET `check`=? WHERE id=?";
 		$db  = new DB;
 		
-		return $db->execute($sql);
+		return $db->execute($sql, [$value]);
 	}
 
 	public static function sortDate($f1,$f2) {
-		if($f1->date > $f2->date) return -1;
-		elseif($f1->date < $f2->date) return 1;
-		else return 0;
+		// if($f1->date > $f2->date) return -1;
+		// elseif($f1->date < $f2->date) return 1;
+		// else return 0;
 	}
 	public static function sortText($f1,$f2) {
 		$property = $_GET['sort'];

@@ -1,41 +1,31 @@
 <?php 
-	class DB {
-		public $title;
-		public $text;
-		public $date;
+  class DB {
+    private $host = 'localhost';
+    private $db   = 'reviewsDB';
+    private $user = 'root';
+    private $pass = '';
+    private $opt = [
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ];
+    protected $pdo;
 
-		public static function connect() {
-			$mysqli = new mysqli("localhost", "root", "", "reviewsDB");
-			if (mysqli_connect_errno()) {
-				printf("Не удалось подключиться: %s\n", mysqli_connect_error());
-				exit();
-			}
-			else {
-				return $mysqli;
-			}
-		}
+    public function __construct() {
+      $dsn = "mysql:host={$this->host};dbname={$this->db}";
+      return $this->pdo = new PDO($dsn, $this->user, $this->pass, $this->opt);
+    }
 
-		public static function execute($sql) 
-		{
-			$mysqli = self::connect();
-			return mysqli_query($mysqli, $sql);
-		}
+    public function execute($sql, $params = []) {
+      $stmt = $this->pdo->prepare($sql);
+      return $stmt = $this->pdo->execute($params);
+    }
 
-		public static function query($sql, $class = 'stdClass') 
-		{
-			$mysqli = self::connect();
-			$res = mysqli_query($mysqli, $sql);
-			if ($res === false) 
-			{
-				return false;
-			}
-			$ret= [];
-			while ($row = $res->fetch_object($class))
-			{
-				$ret[] = $row;
-			};
-			return $ret;
-		}
-
-	}
-?>
+    public function query($sql, $params = []) {
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->execute($params);
+      $ret = [];
+      while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $ret[] = $row;
+      }
+      return $ret;
+    }
+  }

@@ -16,7 +16,7 @@
 
     public function execute($sql, $params = []) {
       $stmt = $this->pdo->prepare($sql);
-      return $stmt = $this->pdo->execute($params);
+      return $stmt->execute($params);
     }
 
     public function query($sql, $params = []) {

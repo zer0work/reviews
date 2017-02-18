@@ -11,7 +11,6 @@ class Model_Reviews extends Model {
 						VALUES ( '$name', '$email', '$text', '$date', '$edit', '$image' )";
 		$db = new DB;
 		$db->execute($sql);
-		var_dump(mysqli_error($db->connect()));
 	}
 	
 	public static function moderReview($id, $value) {

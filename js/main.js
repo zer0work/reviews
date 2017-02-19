@@ -19,29 +19,33 @@ function getFormData() {
 	text  = document.forms["reviewForm"].elements["userText"].value;
 
 	var elem = document.querySelector(".preview");
-	elem.classList.remove("off");
 
-	if ( name != '' && email != '' && text != '' ) {
+	if ( 
+			(name != '' && email != '' && text != '') 
+		) {
+		elem.classList.remove("off");
 		date = new Date();
 		month = date.getMonth();
 		month++;
 		date = date.getFullYear() + '-' + month + '-' + date.getDate();
 
-		var field =  document.getElementById('previewName');
+		var field =  document.querySelector('.previewName');
 		field.innerHTML = name;
 
-		var field =  document.getElementById('previewEmail');
+		var field =  document.querySelector('.previewEmail');
 		field.innerHTML = email;
 
-		var field =  document.getElementById('previewDate');
+		var field =  document.querySelector('.previewDate');
 		field.innerHTML = date;
 
 
-		var field =  document.getElementById('previewText');
+		var field =  document.querySelector('.previewText');
 		field.innerHTML = text;
-}
+	}
 	else {
-		elem.innerHTML = "*Заполните обязательные поля.";
+		var field =  document.querySelector('.errorPrev');
+		field .innerHTML = "* Заполните обязательные поля.";
+		elem.classList.add("off");
 	}
 }
 

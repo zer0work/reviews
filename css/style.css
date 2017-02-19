@@ -115,3 +115,12 @@ body {
 .navbar__sort {
 	margin-top: 67px;
 }
+
+.exit-link {
+	margin-top: 60px;
+}
+
+.errorPrev {
+	line-height: 40px;
+	color: red;
+}

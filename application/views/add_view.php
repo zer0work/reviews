@@ -22,10 +22,10 @@
             <label for="imgAdd">Добавьте картинку</label>
             <input type="file" id="imgAdd" name="image"  accept="image/*" onchange="handleFiles(this.files)">
           </div>
-
-          <input type="submit" class="btn btn-default"></input>
-          <button type="button" onclick="getFormData()" class="btn btn-default">Предварительный просмотр</button>
+            <input type="submit" class="btn btn-default"></input>
+            <button type="button" onclick="getFormData()" class="btn btn-default">Предварительный просмотр</button>
         </fieldset>
+        <span class="errorPrev"></span>
       </form>
     </div>
 
@@ -34,12 +34,12 @@
 
     <div class="preview off">
       <article class="reviews__item">
-        <strong id='previewName'></strong> 
+        <strong class="previewName"></strong>
         <em>
-          <a href="mailto:#" id='previewEmail'></a>
-          <time id='previewDate'></time>
+          <a href="mailto:#" class ='previewEmail'></a>
+          <time class='previewDate'></time>
         </em>
-          <p id='previewText'></p>
+          <p class='previewText'></p>
           <div id="previmage"></div>
       </article>
     </div>

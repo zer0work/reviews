@@ -111,3 +111,7 @@ body {
 .reviews__item .status-1 {
 	color: green;
 }
+
+.navbar__sort {
+	margin-top: 67px;
+}

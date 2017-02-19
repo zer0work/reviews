@@ -23,15 +23,9 @@
 
 
 	</header>
-	<div class="row">
-		<div class="main-container container">
 
-			
-				<?php include __DIR__ . '/' . $content_view; ?>
-			
+		<?php include __DIR__ . '/' . $content_view; ?>
 
-		</div>
-	</div>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <div class="admin-reviews">
 	<?php foreach ($data as $value): ?>
 		<article class="reviews__item">
-			<div class="status status-<?php echo $value->check ?>"><?php $value->check ? print('Принят') : print('Отклонён');?></div>
+			<div class="status status-<?php echo $value->checked ?>"><?php $value->checked ? print('Принят') : print('Отклонён');?></div>
 			<strong><?php echo $value->name ?></strong> 
 			<em>
 				<a href="mailto:#"><?php echo $value->email ?></a>

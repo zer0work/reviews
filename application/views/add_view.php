@@ -22,10 +22,10 @@
             <label for="imgAdd">Добавьте картинку</label>
             <input type="file" id="imgAdd" name="image"  accept="image/*" onchange="handleFiles(this.files)">
           </div>
+        <div class="errorPrev"></div>
             <input type="submit" class="btn btn-default"></input>
             <button type="button" onclick="getFormData()" class="btn btn-default">Предварительный просмотр</button>
         </fieldset>
-        <span class="errorPrev"></span>
       </form>
     </div>
 

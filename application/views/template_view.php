@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<script src='../../js/main.js'></script>
+	<script src='https://code.jquery.com/jquery-2.x-git.min.js' defer></script>
 </head>
 <body>
 	<header>

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="main-container container">
 
-  
+
     <!-- FORM -->
 
     <div class="reviews-form" id="add">
@@ -23,6 +23,7 @@
             <input type="file" id="imgAdd" name="image"  accept="image/*" onchange="handleFiles(this.files)">
           </div>
         <div class="errorPrev"></div>
+        <div class="standart-form"><span>Ваш отзыв будет добавлен после проверки администратором.</span></div>
             <input type="submit" class="btn btn-default"></input>
             <button type="button" onclick="getFormData()" class="btn btn-default">Предварительный просмотр</button>
         </fieldset>
